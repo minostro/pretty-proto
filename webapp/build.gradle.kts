@@ -3,9 +3,6 @@ plugins {
   distribution
 }
 
-group = "ca.aerb"
-version = "1.0-SNAPSHOT"
-
 repositories {
   maven("https://kotlin.bintray.com/kotlin-js-wrappers/")
   jcenter()

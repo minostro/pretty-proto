@@ -6,7 +6,6 @@ plugins {
   kotlin("multiplatform") version "1.3.71" apply false
   kotlin("jvm") version "1.3.71" apply false
   kotlin("js") version "1.3.71" apply false
-  "com.vanniktech.maven.publish.base"
 }
 
 buildscript {
@@ -15,10 +14,9 @@ buildscript {
   }
 }
 
-
 subprojects {
-  group = "ca.aerb"
-  version = "1.0-SNAPSHOT"
+  group = project.property("GROUP") as String
+  version = project.property("VERSION_NAME") as String
 
   repositories {
     mavenCentral()
