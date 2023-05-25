@@ -7,6 +7,8 @@ kotlin {
   js {
     browser
   }
+  jvm {
+  }
 
   sourceSets {
     commonMain {
@@ -18,6 +20,11 @@ kotlin {
       dependencies {
         implementation(kotlin("test-common"))
         implementation(kotlin("test-annotations-common"))
+      }
+    }
+    val jvmMain by getting {
+      dependencies {
+        api(kotlin("stdlib"))
       }
     }
     js().compilations["main"].defaultSourceSet {
