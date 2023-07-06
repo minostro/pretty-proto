@@ -1,10 +1,13 @@
 plugins {
   kotlin("multiplatform")
+  id("com.vanniktech.maven.publish.base")
 }
 
 kotlin {
   js {
     browser
+  }
+  jvm {
   }
 
   sourceSets {
@@ -17,6 +20,11 @@ kotlin {
       dependencies {
         implementation(kotlin("test-common"))
         implementation(kotlin("test-annotations-common"))
+      }
+    }
+    val jvmMain by getting {
+      dependencies {
+        api(kotlin("stdlib"))
       }
     }
     js().compilations["main"].defaultSourceSet {
